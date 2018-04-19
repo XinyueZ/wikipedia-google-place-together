@@ -47,7 +47,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     private fun buildService() {
-        val r = Retrofit.Builder().baseUrl("https://de.wikipedia.org/w/")
+        service = Retrofit.Builder().baseUrl("https://de.wikipedia.org/w/")
             .client(
                 OkHttpClient().newBuilder()
                     .connectTimeout(15, TimeUnit.SECONDS)
@@ -55,8 +55,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
                     .build()
             )
             .addConverterFactory(GsonConverterFactory.create(Gson()))
-            .build()
-        service = r.create(Service::class.java)
+            .build().create(Service::class.java)
     }
 
     private fun buildClient() {
