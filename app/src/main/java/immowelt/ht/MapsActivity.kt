@@ -1,5 +1,6 @@
 package immowelt.ht
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -18,6 +19,8 @@ import com.google.gson.Gson
 import immowelt.ht.api.Service
 import immowelt.ht.geo.GeoResult
 import okhttp3.OkHttpClient
+import pub.devrel.easypermissions.AfterPermissionGranted
+import pub.devrel.easypermissions.EasyPermissions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,19 +37,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+        startAll()
+        buildClient()
+        buildService()
+    }
+
+    private fun startGoogleMap(mapFragment: SupportMapFragment) {
         mapFragment.getMapAsync(this)
+    }
 
-        client = GoogleApiClient.Builder(this)
-            .addApi(Places.GEO_DATA_API)
-            .addApi(Places.PLACE_DETECTION_API)
-            .addApi(LocationServices.API)
-            .enableAutoManage(this, this)
-            .build()
-
+    private fun buildService() {
         val r = Retrofit.Builder().baseUrl("https://de.wikipedia.org/w/")
             .client(
                 OkHttpClient().newBuilder()
@@ -59,7 +59,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         service = r.create(Service::class.java)
     }
 
+    private fun buildClient() {
+        client = GoogleApiClient.Builder(this)
+            .addApi(Places.GEO_DATA_API)
+            .addApi(Places.PLACE_DETECTION_API)
+            .addApi(LocationServices.API)
+            .enableAutoManage(this, this)
+            .build()
+    }
+
     override fun onConnectionFailed(p0: ConnectionResult) {
+    }
+
+    @AfterPermissionGranted(RC_LOCATION)
+    fun startAll() {
+        if (EasyPermissions.hasPermissions(this, ACCESS_FINE_LOCATION)) {
+            setContentView(R.layout.activity_maps)
+            startGoogleMap(
+                supportFragmentManager
+                    .findFragmentById(R.id.map) as SupportMapFragment
+            )
+        } else {
+            EasyPermissions.requestPermissions(
+                this,
+                "Open location permission",
+                RC_LOCATION,
+                ACCESS_FINE_LOCATION
+            )
+        }
     }
 
     @SuppressLint("MissingPermission")
@@ -120,6 +147,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     companion object {
         private val TAG by lazy { MapsActivity.javaClass.simpleName }
+        private const val RC_LOCATION = 987
     }
 
 }
