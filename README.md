@@ -8,4 +8,4 @@ Sample wikipedia-google-place-together
 - Use Wikipedia Geo-Search
 	- As compensation to use Wikipedia Api.
 	
-# Don'f forget map-key, this repo doesn't contain.
+# Don't forget map-key, this repo doesn't contain.
