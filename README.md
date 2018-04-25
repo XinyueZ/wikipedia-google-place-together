@@ -7,3 +7,5 @@ Sample wikipedia-google-place-together
 	- No chance to load more places with place-api of play-service.
 - Use Wikipedia Geo-Search
 	- As compensation to use Wikipedia Api.
+	
+# Don'f forget map-key, this repo doesn't contain.
