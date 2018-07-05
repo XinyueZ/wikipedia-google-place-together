@@ -94,6 +94,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         map.isMyLocationEnabled = true
         map.setOnCameraIdleListener {
             askGoogle()
+            @Suppress("DEPRECATION")
             if (map.myLocation != null)
                 askWikipedia(500, LatLng(map.myLocation.latitude, map.myLocation.longitude))
         }
@@ -145,7 +146,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     companion object {
-        private val TAG by lazy { MapsActivity.javaClass.simpleName }
+        private val TAG by lazy {
+            @Suppress("JAVA_CLASS_ON_COMPANION")
+            MapsActivity.javaClass.simpleName
+        }
         private const val RC_LOCATION = 987
     }
 }
