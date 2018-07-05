@@ -40,5 +40,4 @@ object Utils {
         DrawableCompat.setTint(newDrawable, color)
         return newDrawable
     }
-
 }

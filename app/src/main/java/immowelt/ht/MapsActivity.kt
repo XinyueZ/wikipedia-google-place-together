@@ -148,5 +148,4 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         private val TAG by lazy { MapsActivity.javaClass.simpleName }
         private const val RC_LOCATION = 987
     }
-
 }
