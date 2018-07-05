@@ -5,6 +5,15 @@ buildscript {
         supportLib4 = "28+"
         supportLib7 = "28+"
 
+        play = "15.0.1"
+        junit = "4.12"
+        runner = "1.0.2"
+        espresso = "3.0.2"
+        map_units = "0.5"
+        retrofit = "2.4.0"
+        easy_permission = "1.2.0"
+        gson = "2.8.5"
+
         kotlin_version = "1.2.51"
         gradle_version = "3.3.0-alpha02"
         ktlintVersion = '0.24.0'

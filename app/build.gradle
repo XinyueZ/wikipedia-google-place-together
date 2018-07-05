@@ -42,15 +42,15 @@ dependencies {
     implementation ("com.android.support:appcompat-v7:$supportLib7") {
         exclude module: 'support-v4'
     }
-    implementation 'com.google.android.gms:play-services-maps:+'
-    implementation 'com.google.android.gms:play-services-places:+'
-    implementation 'com.google.android.gms:play-services-location:+'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:+'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:+'
-    implementation 'com.google.maps.android:android-maps-utils:+'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'pub.devrel:easypermissions:1.2.0'
-    implementation group: 'com.google.code.gson', name: 'gson', version: '+'
+    implementation "com.google.android.gms:play-services-maps:$play"
+    implementation "com.google.android.gms:play-services-places:$play"
+    implementation "com.google.android.gms:play-services-location:$play"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "com.android.support.test:runner:$runner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso"
+    implementation "com.google.maps.android:android-maps-utils:$map_units"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "pub.devrel:easypermissions:$easy_permission"
+    implementation "com.google.code.gson:gson:$gson"
 }
