@@ -1,6 +1,8 @@
 Sample wikipedia-google-place-together
 ===
 
+[![Build Status](https://travis-ci.org/XinyueZ/wikipedia-google-place-together.svg?branch=master)](https://travis-ci.org/XinyueZ/wikipedia-google-place-together)
+
 > This is a temporary repository  that will no longer be maintained.
 
 - Use Google Android Place API 
