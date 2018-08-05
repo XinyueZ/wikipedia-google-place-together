@@ -14,8 +14,8 @@ buildscript {
         easy_permission = "1.2.0"
         gson = "2.8.5"
 
-        kotlin_version = "1.2.51"
-        gradle_version = "3.3.0-alpha02"
+        kotlin_version = "1.2.60"
+        gradle_version = "3.3.0-alpha04"
         ktlintVersion = '0.24.0'
     }
 
