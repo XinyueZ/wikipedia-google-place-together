@@ -3,12 +3,14 @@ Sample wikipedia-google-place-together
 
 [![Build Status](https://travis-ci.org/XinyueZ/wikipedia-google-place-together.svg?branch=master)](https://travis-ci.org/XinyueZ/wikipedia-google-place-together)
 
-> This is a temporary repository  that will no longer be maintained.
+> This is a temporary repository  that will no longer be maintained. 
 
 - Use Google Android Place API 
 	- No chance to load more places with place-api of play-service.
 - Use Wikipedia Geo-Search
 	- As compensation to use Wikipedia Api.
+	
+# For map-app initilization this project can be copy-paste used directly.
 	
 # Don't forget map-key, this repo doesn't contain.
 
