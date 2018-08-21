@@ -2,6 +2,14 @@
 
 buildscript {
     ext {
+        min_sdk_version = 19
+        target_sdk_version = 28
+        compile_sdk_version = 28
+        app_id = "com.demo.mvp"
+        version_code = 1
+        version_name = "0.1"
+        test_instrumentation_runner ="android.support.test.runner.AndroidJUnitRunner"
+
         supportLib4 = "28+"
         supportLib7 = "28+"
 
