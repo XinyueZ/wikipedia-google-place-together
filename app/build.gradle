@@ -53,4 +53,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
     implementation "pub.devrel:easypermissions:$easy_permission"
     implementation "com.google.code.gson:gson:$gson"
+
+    // APIs for map
+    implementation "com.google.maps:google-maps-services:$google_map_services"
+    implementation "org.slf4j:slf4j-nop:$slf_4_j"
 }
