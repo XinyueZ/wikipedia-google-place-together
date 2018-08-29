@@ -46,21 +46,15 @@ android {
 
 configurations.all { configuration ->
     resolutionStrategy {
-        force "com.android.support:support-v4:$supportLib4",
-                "com.android.support:appcompat-v7:$supportLib7"
+        force "com.android.support:support-v4:$app_compat",
+                "com.android.support:appcompat-v7:$app_compat"
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "com.android.support:support-compat:$supportLib4"
-    implementation "com.android.support:support-core-utils:$supportLib4"
-    implementation "com.android.support:support-core-ui:$supportLib4"
-    implementation "com.android.support:support-media-compat:$supportLib4"
-    implementation ("com.android.support:appcompat-v7:$supportLib7") {
-        exclude module: 'support-v4'
-    }
+    implementation "com.android.support:appcompat-v7:$app_compat"
     implementation "com.google.android.gms:play-services-maps:$play"
     implementation "com.google.android.gms:play-services-places:$play"
     implementation "com.google.android.gms:play-services-location:$play"
