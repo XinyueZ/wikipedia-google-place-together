@@ -71,3 +71,5 @@ dependencies {
     implementation "com.google.maps:google-maps-services:$google_map_services"
     implementation "org.slf4j:slf4j-nop:$slf_4_j"
 }
+
+apply from: "ci.gradle"
