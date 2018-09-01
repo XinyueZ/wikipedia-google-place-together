@@ -22,7 +22,7 @@ buildscript {
         gson = "2.8.5"
 
         kotlin_version = "1.2.61"
-        gradle_version = "3.3.0-alpha07"
+        gradle_version = "3.3.0-alpha08"
         ktlintVersion = '0.24.0'
     }
 
